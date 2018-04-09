@@ -12,9 +12,6 @@
         android:background="@color/colorPrimary"
         app:contentInsetStart="0dp"
         app:contentInsetStartWithNavigation="0dp"
-        app:titleTextAppearance="@style/toolbar_title_style"
-        app:subtitleTextAppearance="@style/toolbar_subtitle_style"
-        app:popupTheme="@style/toolbar_pop_theme"
         >
         <TextView
             android:id="@+id/centerText"

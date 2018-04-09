@@ -6,6 +6,7 @@ import android.view.MenuItem;
 
 import com.common.BaseComponent.BaseActivity;
 import com.common.BaseComponent.Lite.ToolbarSetter;
+import com.common.Glide.GlideApp;
 import com.common.Util.LogUtil;
 
 

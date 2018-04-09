@@ -15,7 +15,7 @@
         android:orderInCategory="2"
         android:icon="@drawable/ic_back"
         android:title="探索实验室"
-        app:showAsAction="never" />
+        app:showAsAction="always" />
     <item
         android:id="@+id/science"
         android:icon="@drawable/ic_back"
