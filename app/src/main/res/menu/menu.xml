@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <item
+        android:id="@+id/toolbar_search"
+        android:icon="@drawable/ic_launcher_background"
+        android:title="搜索"
+        android:iconTint="@null"
+        android:orderInCategory="0"
+        app:showAsAction="always" />
+    <!--app:actionViewClass="android.support.v7.widget.SearchView"-->
+    <!--app:showAsAction="never|collapseActionView"-->
+    <item
+        android:id="@+id/science2"
+        android:orderInCategory="2"
+        android:icon="@drawable/ic_back"
+        android:title="探索实验室"
+        app:showAsAction="never" />
+    <item
+        android:id="@+id/science"
+        android:icon="@drawable/ic_back"
+        android:orderInCategory="2"
+        android:title="探索实验室"
+        app:showAsAction="always" />
+    <item
+        android:id="@+id/toolbar_fontsize"
+        android:icon="@drawable/ic_back"
+        android:orderInCategory="3"
+        android:title="字号"
+        app:showAsAction="always" />
+</menu>
