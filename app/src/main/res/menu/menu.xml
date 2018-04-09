@@ -10,6 +10,7 @@
         app:showAsAction="always" />
     <!--app:actionViewClass="android.support.v7.widget.SearchView"-->
     <!--app:showAsAction="never|collapseActionView"-->
+    <!--app:actionLayout="@layout/menu_action_album_edit"-->
     <item
         android:id="@+id/science2"
         android:orderInCategory="2"
@@ -20,12 +21,13 @@
         android:id="@+id/science"
         android:icon="@drawable/ic_back"
         android:orderInCategory="2"
-        android:title="探索实验室"
-        app:showAsAction="always" />
+        android:title="探索实验室2"
+        app:showAsAction="never" />
     <item
         android:id="@+id/toolbar_fontsize"
         android:icon="@drawable/ic_back"
         android:orderInCategory="3"
         android:title="字号"
-        app:showAsAction="always" />
+
+        app:showAsAction="always|withText" />
 </menu>
