@@ -4,6 +4,7 @@ import android.app.Application;
 import android.content.Context;
 
 import com.common.Util.AppContext;
+import com.common.Util.LogUtil;
 import com.nestrefreshlib.RefreshViews.RefreshLayout;
 
 import io.reactivex.functions.Consumer;
@@ -32,7 +33,7 @@ public class App extends Application {
         RxJavaPlugins.setErrorHandler(new Consumer<Throwable>() {
             @Override
             public void accept(Throwable throwable) throws Exception {
-
+                LogUtil.Log(throwable.getMessage());
             }
         });
     }

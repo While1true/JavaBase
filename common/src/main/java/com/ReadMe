@@ -1,0 +1,16 @@
+
+使用
+  --在application中初始化RefreshLayout
+        RefreshLayout.init(new RefreshLayout.DefaultBuilder()
+                .setCanheaderDefault(true)
+                .setCanfootrDefault(true)
+                .setScrollLayoutIdDefault(R.layout.recyclerview)
+                .setHeaderLayoutidDefault(R.layout.header_layout)
+                .setFooterLayoutidDefault(R.layout.footer_layout));
+
+
+  --application中初始化全局context
+         AppContext.init(application)
+
+  --application中初始化 retrofit
+         RxManager.init()

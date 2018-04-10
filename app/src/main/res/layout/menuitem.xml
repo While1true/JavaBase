@@ -10,6 +10,7 @@
         android:clickable="true"
         android:gravity="center"
         android:padding="12dp"
+        android:drawableLeft="@drawable/ic_back"
         android:layout_gravity="center"
         android:text="FIFA"
         android:textColor="#fff">

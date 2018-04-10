@@ -15,12 +15,12 @@
         android:orderInCategory="2"
         android:icon="@drawable/ic_back"
         android:title="探索实验室"
-        app:showAsAction="always" />
+        app:showAsAction="never" />
     <item
         android:id="@+id/science"
         app:actionLayout="@layout/menuitem"
         android:orderInCategory="2"
-        app:showAsAction="never"
+        app:showAsAction="always"
         android:title="xxxxx" />
     <item
         android:id="@+id/toolbar_fontsize"

@@ -8,17 +8,11 @@ import com.bumptech.glide.load.model.GlideUrl;
 import com.bumptech.glide.load.model.ModelLoader;
 import com.bumptech.glide.load.model.ModelLoaderFactory;
 import com.bumptech.glide.load.model.MultiModelLoaderFactory;
-import com.common.TODO.RxManager;
-import com.common.Util.LogUtil;
-import com.master.rxlib.Rx.Net.HttpsCerUtil;
-import com.master.rxlib.Rx.Net.RetrofitHttpManger;
+import com.common.Net.RxManager;
 
 import java.io.InputStream;
-import java.util.concurrent.TimeUnit;
 
 import okhttp3.Call;
-import okhttp3.OkHttpClient;
-import okhttp3.logging.HttpLoggingInterceptor;
 
 /**
  * A simple model loader for fetching media over http/https using OkHttp.
