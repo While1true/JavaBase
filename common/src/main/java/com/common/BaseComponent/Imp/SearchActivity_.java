@@ -42,10 +42,6 @@ public abstract class SearchActivity_<T> extends BaseActivity {
 
     @Override
     protected void init(Bundle savedInstanceState) {
-        if (getLayoutID() == 0)
-            getWindow().setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_ADJUST_PAN | WindowManager.LayoutParams.SOFT_INPUT_STATE_HIDDEN);
-        else
-            getWindow().setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_ADJUST_PAN | WindowManager.LayoutParams.SOFT_INPUT_STATE_VISIBLE);
         StateBarUtils.performTransStateBar(getWindow());
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
             getWindow().setEnterTransition(new Explode());
@@ -74,6 +70,7 @@ public abstract class SearchActivity_<T> extends BaseActivity {
             pageLoading.getStateAdapter().setLayoutId(StateEnum.SHOW_EMPTY, getEmptyLayout());
             pageLoading.getStateAdapter().showEmpty();
         } else {
+            pageLoading.getStateAdapter().showLoading();
             pageLoading.Go();
         }
 

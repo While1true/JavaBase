@@ -54,7 +54,7 @@ public class MainActivity extends SearchActivity_<HashMap<String,String>> {
 
     @Override
     protected int getEmptyLayout() {
-        return R.layout.state_empty;
+        return 0;
     }
 
     interface Api {
