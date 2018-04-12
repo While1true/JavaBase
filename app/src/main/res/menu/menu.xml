@@ -15,7 +15,25 @@
         android:orderInCategory="2"
         android:icon="@drawable/ic_back"
         android:title="探索实验室"
-        app:showAsAction="never" />
+        app:showAsAction="never" >
+        <menu>
+            <group >
+                <item
+                    android:id="@+id/sciencexx"
+                    app:actionLayout="@layout/menuitem"
+                    android:orderInCategory="2"
+                    app:showAsAction="always"
+                    android:title="xxxxx" />
+                <item
+                    android:id="@+id/toolbar_fontsizexx"
+                    android:icon="@drawable/ic_back"
+                    android:orderInCategory="3"
+                    android:title="字号"
+                    app:showAsAction="never" />
+            </group>
+        </menu>
+    </item>
+
     <item
         android:id="@+id/science"
         app:actionLayout="@layout/menuitem"
@@ -28,4 +46,23 @@
         android:orderInCategory="3"
         android:title="字号"
         app:showAsAction="never" />
+    <!--<item-->
+        <!--android:id="@+id/next"-->
+        <!--android:icon="@mipmap/ic_launcher"-->
+        <!--android:title="下一首播放"/>-->
+
+    <!--<item-->
+        <!--android:id="@+id/add"-->
+        <!--android:icon="@mipmap/ic_launcher"-->
+        <!--android:title="添加到歌单"/>-->
+
+    <!--<item-->
+        <!--android:id="@+id/detail"-->
+        <!--android:icon="@mipmap/ic_launcher"-->
+        <!--android:title="歌曲详情"/>-->
+
+    <!--<item-->
+        <!--android:id="@+id/del"-->
+        <!--android:icon="@mipmap/ic_launcher"-->
+        <!--android:title="删除歌曲"/>-->
 </menu>

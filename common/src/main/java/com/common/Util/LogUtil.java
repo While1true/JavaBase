@@ -18,7 +18,7 @@ public class LogUtil {
         if (BuildConfig.showlog) {
             Log.i(tag, "┏━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━");
             Log.i(tag, "┃ ");
-            Log.i(tag, "┃ message: " + message);
+            Log.i(tag, "┃  " + message);
             Log.i(tag, "┃ ");
             Log.i(tag, "┗━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━");
         }

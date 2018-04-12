@@ -1,23 +1,28 @@
 package com.common.BaseComponent;
 
 
+import android.content.Intent;
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
+import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentTransaction;
 import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
-import com.common.BaseComponent.Lite.BaseA;
-import com.common.BaseComponent.Lite.ToolbarSetter;
+import com.common.BaseComponent.Original.BaseA;
+import com.common.BaseComponent.Original.IBaseView;
+import com.common.BaseComponent.Original.ToolbarSetter;
 import com.common.R;
+import com.common.Util.LogUtil;
 
 /**
  * Created by 不听话的好孩子 on 2018/4/8.
  */
 
-public abstract class BaseActivity extends BaseA{
+public abstract class BaseActivity extends BaseA implements IBaseView{
 
     protected Toolbar toobar;
 
@@ -38,6 +43,10 @@ public abstract class BaseActivity extends BaseA{
             setToobarAttrs();
             if (getLayoutID() != 0) {
                 getLayoutInflater().inflate(getLayoutID(), linearLayout, true);
+            }
+        }else {
+            if (getLayoutID() != 0) {
+                setContentView(getLayoutID());
             }
         }
         init(savedInstanceState);
@@ -68,5 +77,9 @@ public abstract class BaseActivity extends BaseA{
 
     protected abstract int getLayoutID();
 
+    @Override
+    public void Log(String message) {
+        LogUtil.Log(getClass().getSimpleName(),message);
+    }
 
 }

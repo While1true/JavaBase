@@ -11,11 +11,13 @@
         <item name="android:actionMenuTextColor">#ffffff</item>
         <item name="android:actionOverflowButtonStyle">@style/toolbar_overflow_button_style</item>
         <item name="actionOverflowMenuStyle">@style/toolbar_action_menu_overflow</item>
-        <item name="android:textColorPrimary">#ffffff</item>
+
         <!--溢出按钮图标颜色-->
         <item name="colorControlNormal">@android:color/white</item>
         <!-- 溢出菜单文字颜色-->
         <item name="textAppearanceLargePopupMenu">@style/toolbar_subtitle_style</item>
+        <!--二级菜单title-->
+        <item name="android:textColorSecondary">#FFF</item>
         <!-- 菜单项点击selector-->
         <item name="actionBarItemBackground">?android:attr/selectableItemBackgroundBorderless</item>
 
@@ -77,6 +79,7 @@
         <item name="android:showDividers">middle</item>
         <item name="android:divider">#353535</item>
         <item name="android:dividerHeight">0.5dp</item>
+        <!--<item name="android:textColorPrimary">#353535</item>-->
     </style>
 
 </resources>

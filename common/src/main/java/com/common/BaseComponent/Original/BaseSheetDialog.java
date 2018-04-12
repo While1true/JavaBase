@@ -1,4 +1,4 @@
-package com.common.BaseComponent.Lite;
+package com.common.BaseComponent.Original;
 
 import android.os.Bundle;
 import android.support.annotation.NonNull;

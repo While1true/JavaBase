@@ -7,6 +7,7 @@ import android.support.v7.widget.LinearLayoutManager;
 import android.text.TextUtils;
 import android.transition.Explode;
 import android.view.View;
+import android.view.WindowManager;
 import android.widget.EditText;
 
 import com.common.BaseComponent.BaseActivity;
@@ -41,15 +42,15 @@ public abstract class SearchActivity_<T> extends BaseActivity {
 
     @Override
     protected void init(Bundle savedInstanceState) {
+        getWindow().setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_ADJUST_PAN|WindowManager.LayoutParams.SOFT_INPUT_STATE_VISIBLE);
         StateBarUtils.performTransStateBar(getWindow());
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
             getWindow().setEnterTransition(new Explode());
         }
-
+        editText = findViewById(R.id.et_input);
         findViewById(R.id.iv_back).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                editText = (EditText) findViewById(R.id.et_input);
                 InputUtils.hideKeyboard(editText);
                 onBackPressed();
             }
@@ -109,7 +110,7 @@ public abstract class SearchActivity_<T> extends BaseActivity {
 
     @Override
     protected final int getLayoutID() {
-        return 0;
+        return R.layout.search_activity;
     }
     protected boolean isInnerAdapter(){
         return true;

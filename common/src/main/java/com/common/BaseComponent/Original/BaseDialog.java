@@ -1,4 +1,4 @@
-package com.common.BaseComponent.Lite;
+package com.common.BaseComponent.Original;
 
 import android.app.Dialog;
 import android.app.DialogFragment;

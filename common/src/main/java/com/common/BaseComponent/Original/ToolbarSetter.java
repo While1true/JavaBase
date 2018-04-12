@@ -1,4 +1,4 @@
-package com.common.BaseComponent.Lite;
+package com.common.BaseComponent.Original;
 
 import android.annotation.SuppressLint;
 import android.graphics.drawable.Drawable;

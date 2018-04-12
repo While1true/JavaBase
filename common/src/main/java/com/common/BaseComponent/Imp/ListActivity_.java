@@ -27,7 +27,9 @@ public abstract class ListActivity_<T> extends BaseActivity {
                 return getObserver(getPagenum(), getPagesize());
             }
         }
-                .addType(getItemHolder()).AddLifeOwner(this);
+                .addType(getItemHolder())
+                .AddLifeOwner(this)
+                .Go();
     }
 
     private boolean isInnerAdapter() {
