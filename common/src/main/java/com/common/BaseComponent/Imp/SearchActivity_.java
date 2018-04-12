@@ -42,7 +42,10 @@ public abstract class SearchActivity_<T> extends BaseActivity {
 
     @Override
     protected void init(Bundle savedInstanceState) {
-        getWindow().setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_ADJUST_PAN|WindowManager.LayoutParams.SOFT_INPUT_STATE_VISIBLE);
+        if (getLayoutID() == 0)
+            getWindow().setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_ADJUST_PAN | WindowManager.LayoutParams.SOFT_INPUT_STATE_HIDDEN);
+        else
+            getWindow().setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_ADJUST_PAN | WindowManager.LayoutParams.SOFT_INPUT_STATE_VISIBLE);
         StateBarUtils.performTransStateBar(getWindow());
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
             getWindow().setEnterTransition(new Explode());
@@ -60,17 +63,17 @@ public abstract class SearchActivity_<T> extends BaseActivity {
     }
 
     private void initData() {
-       final RefreshLayoutPageLoading pageLoading = new RefreshLayoutPageLoading<T>((RefreshLayout)findViewById(R.id.refreshlayout), new LinearLayoutManager(this), isInnerAdapter()) {
+        final RefreshLayoutPageLoading pageLoading = new RefreshLayoutPageLoading<T>((RefreshLayout) findViewById(R.id.refreshlayout), new LinearLayoutManager(this), isInnerAdapter()) {
             @Override
             public Observable<Base<List<T>>> getObservable() {
-                return getObserver(getPagenum(),getPagesize());
+                return getObserver(getPagenum(), getPagesize());
             }
         }
                 .addType(getItemHolder()).AddLifeOwner(this);
-        if(getEmptyLayout()!=0){
+        if (getEmptyLayout() != 0) {
             pageLoading.getStateAdapter().setLayoutId(StateEnum.SHOW_EMPTY, getEmptyLayout());
             pageLoading.getStateAdapter().showEmpty();
-        }else {
+        } else {
             pageLoading.Go();
         }
 
@@ -99,10 +102,11 @@ public abstract class SearchActivity_<T> extends BaseActivity {
     protected void handleTitlebar() {
         if (Build.VERSION.SDK_INT < Build.VERSION_CODES.LOLLIPOP) {
             CardView cardview = findViewById(R.id.cardview);
-                    cardview.setMaxCardElevation(0f);
+            cardview.setMaxCardElevation(0f);
             cardview.setContentPadding(0, 0, 0, SizeUtils.dp2px(6f));
         }
     }
+
     @Override
     protected final boolean showToolbar() {
         return false;
@@ -112,12 +116,14 @@ public abstract class SearchActivity_<T> extends BaseActivity {
     protected final int getLayoutID() {
         return R.layout.search_activity;
     }
-    protected boolean isInnerAdapter(){
+
+    protected boolean isInnerAdapter() {
         return true;
     }
+
     protected abstract ItemHolder<T> getItemHolder();
 
-    protected abstract Observable<Base<List<T>>>getObserver(int pagenum,int pagesize);
+    protected abstract Observable<Base<List<T>>> getObserver(int pagenum, int pagesize);
 
-    protected abstract int  getEmptyLayout();
+    protected abstract int getEmptyLayout();
 }
