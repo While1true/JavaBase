@@ -31,6 +31,7 @@ public abstract class RefreshLayoutPageLoading<T> extends DataObserver<List<T>> 
     private int pagesize = 8;
     private boolean nomore = false;
     private boolean loading = false;
+    private boolean notifycomplete = false;
     private List<T> list = new ArrayList<>();
     private RefreshLayout refreshLayout;
     private StateAdapter stateAdapter = new StateAdapter(list);
@@ -80,6 +81,7 @@ public abstract class RefreshLayoutPageLoading<T> extends DataObserver<List<T>> 
         refreshLayout.setListener(new RefreshListener() {
             @Override
             public void Refreshing() {
+                notifycomplete=true;
                 pagenum = 1;
                 nomore=false;
                 Go();
@@ -152,7 +154,10 @@ public abstract class RefreshLayoutPageLoading<T> extends DataObserver<List<T>> 
                 }
             }
         }
-        refreshLayout.NotifyCompleteRefresh0();
+        if(notifycomplete) {
+            notifycomplete=false;
+            refreshLayout.NotifyCompleteRefresh0();
+        }
     }
 
     @Override
